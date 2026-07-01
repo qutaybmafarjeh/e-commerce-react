@@ -10,9 +10,11 @@ export default function Categoires() {
 
 
     const { data, isLoading, isError, error } = useCategories();
+
     if (isLoading) return <CircularProgress />
     
-    if (isError) return <Typography color="error">{error}</Typography>
+    if (isError) return <Typography color="red">{error}</Typography>
+  
     
 
 

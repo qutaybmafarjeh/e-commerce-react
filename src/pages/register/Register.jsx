@@ -3,8 +3,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { yupResolver } from "@hookform/resolvers/yup"
-import * as yup from "yup"
-import { CircleSharp } from '@mui/icons-material';
+import { resgisterSchema } from '../validation/registerSchems';
 
 
 
@@ -13,13 +12,7 @@ export default function Register() {
   
   const [serverErrors, setServerErrors] = useState([]);
 
-  const resgisterSchema = yup.object({
-    userName: yup.string().required().min(3).max(30),
-    fullName: yup.string().required().min(3).max(30),
-    email: yup.string().email().required(),
-    phone: yup.string().required(),
-    password: yup.string().required()
-  })
+ 
 
 
       const {register, handleSubmit, formState: {errors, isSubmitting}} = useForm(
@@ -62,9 +55,9 @@ export default function Register() {
         error={errors.email}
         helperText={errors.email?.message}
         />
-        <TextField label="PhoneNumber" {...register('phone')} variant="outlined"
-        error={errors.phone}
-        helperText={errors.phone?.message}
+        <TextField label="Phone Number" {...register('phoneNumber')} variant="outlined"
+        error={errors.phoneNumber}
+        helperText={errors.phoneNumber?.message}
         />
         <TextField label="Password" {...register('password')} variant="outlined"
         error={errors.password}
