@@ -3,15 +3,19 @@ import { create } from "zustand";
 
 
 
+
 const useAuthStore = create((set) => ({
     token: localStorage.getItem('accessToken'),
-    setToken: (newToken) => {
-        localStorage.setItem('accessToken', newToken);
+    
+    setToken: (token) => {
         set({
-            token: newToken
+            token: token
         });
-        localStorage.setItem('accessToken', newToken);
+        localStorage.setItem('accessToken', token);
     },
+
+
+
     Logout: () => {
        set({
             token: null

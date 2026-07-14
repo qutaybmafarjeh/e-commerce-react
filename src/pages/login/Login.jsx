@@ -4,13 +4,19 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { yupResolver } from "@hookform/resolvers/yup"
 import { loginSchema } from '../validation/loginSchems';
+import useAuthStore from '../../store/useAuthStore';
+import { useNavigate } from 'react-router-dom';
+ 
 
 
 
 
 export default function Login() {
+
+  const navigator = useNavigate();
   
   const [serverErrors, setServerErrors] = useState([]);
+  const setToken = useAuthStore((state) => state.setToken);
   
 
   
@@ -25,6 +31,7 @@ export default function Login() {
         try {
           const response = await axios.post(`${import.meta.env.VITE_BURL}/auth/Account/Login`, data);
           setToken(response.data.token);
+          navigator('/');
           
         } catch (err) {
           setServerErrors(err.response?.data?.errors || [err.message]);
@@ -56,9 +63,9 @@ export default function Login() {
         helperText={errors.password?.message}
         />
 
-          <Button variant="contained" type="submit" color="primary" disabled={isSubmitting}>
-            {isSubmitting? <CircularProgress /> : 'Login'}
-          </Button>
+         <Button type="submit" variant="contained" color="primary" disabled={isSubmitting}>
+          {isSubmitting ? <CircularProgress size={24} /> : 'Login'}
+        </Button>
 
       </Box>
 
