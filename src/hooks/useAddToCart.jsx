@@ -5,10 +5,10 @@ import authAxiosInstance from '../api/authAxiosInstance'
 export default function useAddToCart() {
   
     return useMutation({
-        mutationFn: async (productId, count ) => {
-            return await authAxiosInstance.post('/cart',{
-                ProductId: productId,
-                Count: count
+        mutationFn: async (values ) => {
+            return await authAxiosInstance.post('/Carts',{
+                ProductId: values.productId,
+                Count: values.count
             });
 
         }
