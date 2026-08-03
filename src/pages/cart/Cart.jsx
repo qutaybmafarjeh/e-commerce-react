@@ -1,7 +1,8 @@
-import { TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
+import { Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
 import CircularProgress from "@mui/material/CircularProgress";
-import { Box } from "lucide-react";
+
 import useCart from "../../hooks/useCart";
+
 
 
 export default function Cart() {
@@ -17,8 +18,7 @@ export default function Cart() {
   }
 
 
-
-  console.log(data);
+ 
 
 
 
@@ -35,8 +35,8 @@ export default function Cart() {
           <TableHead>
 
             <TableCell>Product Name</TableCell>
-            <TableCell>Price</TableCell>
             <TableCell>Quantity</TableCell>
+            <TableCell>Price</TableCell>
             <TableCell>Total</TableCell>
             <TableCell>Actions</TableCell>
 
@@ -50,7 +50,7 @@ export default function Cart() {
             (
               <TableRow key={item.id}>
                  <TableCell>{item.productName}</TableCell>
-                  <TableCell>{item.prouductId}</TableCell>
+                  <TableCell>{item.productId}</TableCell>
                    <TableCell>{item.price}$</TableCell>
                     <TableCell>{item.count}</TableCell>
                      <TableCell>{item.totalPrice}</TableCell>

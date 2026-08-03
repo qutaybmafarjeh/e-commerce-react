@@ -4,7 +4,7 @@ import { Box, Button, CircularProgress, Typography } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import useAddToCart from '../../hooks/useAddToCart';
 
-export default function productDetails() {
+export default function ProductDetails() {
 
   const{id} = useParams();
 
@@ -24,7 +24,7 @@ export default function productDetails() {
         <Typography>price: {data.response.price}</Typography>
         <img src={data.response.image} alt={data.response.name} />
 
-        <Button onClick={() =>{ AddToCart({ productId: data.response.id, count: 1 }) }}>Add to Cart</Button>
+        <Button onClick={() => AddToCart({ productId: data.response.id, count: 1 }) }>Add to Cart</Button>
     </Box>
   )
 }

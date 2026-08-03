@@ -32,6 +32,7 @@ const router = createBrowserRouter([
                 <Cart />
             </ProtectedRouter>
         },
+       
         {
             path: "/product",
             element: <Product />

@@ -30,14 +30,15 @@ export default function Login() {
       const LoginForm = async (data) => {
         try {
           const response = await axios.post(`${import.meta.env.VITE_BURL}/auth/Account/Login`, data);
-          setToken(response.data.token);
+        
+          setToken(response.data.accessToken);
           navigator('/');
           
         } catch (err) {
           setServerErrors(err.response?.data?.errors || [err.message]);
         }
       }
-
+     
 
   return (
     <Box component="section" className="LoginPage">

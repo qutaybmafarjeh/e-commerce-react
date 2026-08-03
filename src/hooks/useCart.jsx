@@ -1,18 +1,17 @@
-import React from 'react'
 import { useQuery } from '@tanstack/react-query';
+import authAxiosInstance from '../api/authAxiosInstance';
 
 
 export default function useCart() {
 
-    const getItem = async () => {
-
-        const response = await authAxioxInstance.get('/Carts');
+    const getItems = async () => {
+        const response = await authAxiosInstance.get('/Carts');
         return response.data;
     }
 
     return useQuery({
-        queryKey: ['cart','en'],
-        queryFn: getItem,
+        queryKey: ['cart', 'en'],
+        queryFn: getItems,
         staleTime: 1000 * 60 * 5,
     })
 
