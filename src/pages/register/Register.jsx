@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { yupResolver } from "@hookform/resolvers/yup"
 import { resgisterSchema } from '../validation/registerSchems';
+import { useTranslation } from 'react-i18next';
 
 
 
@@ -11,6 +12,7 @@ import { resgisterSchema } from '../validation/registerSchems';
 export default function Register() {
   
   const [serverErrors, setServerErrors] = useState([]);
+  const{t}=useTranslation();
 
  
 
@@ -33,7 +35,9 @@ export default function Register() {
   return (
     <Box component="section" className="registerPage">
       <Typography variant="h1" component="h3">
-        Register
+        {t('Register')}
+      </Typography>
+      <Typography variant="h6" component="h6">
       </Typography>
 
       {serverErrors?.length > 0? serverErrors.map((error) => 
@@ -43,29 +47,29 @@ export default function Register() {
 
       <Box onSubmit={handleSubmit(RegisterForm)} component="form" className="register__form" sx={{ display: 'flex',
          flexDirection: 'column', gap: 2, marginTop: 2 }}>
-        <TextField label="Username" {...register('userName')}  variant="outlined"
+        <TextField label={t('Username')} {...register('userName')}  variant="outlined"
         error={errors.userName}
         helperText={errors.userName?.message}
         />
-        <TextField label="Full Name" {...register('fullName')} variant="outlined"
+        <TextField label={t('Full Name')} {...register('fullName')} variant="outlined"
         error={errors.fullName}
         helperText={errors.fullName?.message}
         />
-        <TextField label="Email" {...register('email')}  variant="outlined"
+        <TextField label={t('Email')} {...register('email')}  variant="outlined"
         error={errors.email}
         helperText={errors.email?.message}
         />
-        <TextField label="Phone Number" {...register('phoneNumber')} variant="outlined"
+        <TextField label={t('Phone Number')} {...register('phoneNumber')} variant="outlined"
         error={errors.phoneNumber}
         helperText={errors.phoneNumber?.message}
         />
-        <TextField label="Password" {...register('password')} variant="outlined"
+        <TextField label={t('Password')} {...register('password')} variant="outlined"
         error={errors.password}
         helperText={errors.password?.message}
         />
 
           <Button variant="contained" type="submit" color="primary" disabled={isSubmitting}>
-            {isSubmitting? <CircularProgress /> : 'Register'}
+            {isSubmitting? <CircularProgress /> : t('Register')}
           </Button>
 
       </Box>

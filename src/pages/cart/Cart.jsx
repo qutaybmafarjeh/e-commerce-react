@@ -6,10 +6,12 @@ import useRemoveFromCart from "../../hooks/useRemoveFromCart";
 import useUpdateCartItem from "../../hooks/useUpdateCartItem";
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
+import { useTranslation } from "react-i18next";
 
 
 
 export default function Cart() {
+  const {t}=useTranslation();
 
   const { data, isLoading, isError } = useCart();
 
@@ -45,7 +47,7 @@ export default function Cart() {
 
     <Box coponent="section">
       <Typography varient='h1'  >
-        Cart
+        {t('Cart')}
       </Typography>
 
       <TableContainer>
@@ -54,12 +56,12 @@ export default function Cart() {
           <TableHead>
 
 
-            <TableCell>Product Name</TableCell>
-            <TableCell>Product Id</TableCell>
-            <TableCell>Quantity</TableCell>
-            <TableCell>Price</TableCell>
-            <TableCell>Total</TableCell>
-            <TableCell>Actions</TableCell>
+            <TableCell>{t('Product Name')}</TableCell>
+            <TableCell>{t('Product Id')}</TableCell>
+            <TableCell>{t('Quantity')}</TableCell>
+            <TableCell>{t('Price')}</TableCell>
+            <TableCell>{t('Total')}</TableCell>
+            <TableCell>{t('Actions')}</TableCell>
 
           </TableHead>
 
@@ -87,7 +89,7 @@ export default function Cart() {
                 <TableCell>{item.price}$</TableCell>
                 <TableCell>{item.totalPrice}</TableCell>
                 <TableCell>
-                  <Button color="error" disabled={isPending} onClick={() => removeItem(item.productId)}>Remove</Button>
+                  <Button color="error" disabled={isPending} onClick={() => removeItem(item.productId)}> {t('Remove')} </Button>
                 </TableCell>
 
               </TableRow>
