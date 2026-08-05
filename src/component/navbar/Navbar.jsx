@@ -49,6 +49,7 @@ export default function Navbar() {
               {t('Logout')}
             </Link>
             <Link to="/cart">{t('Cart')}</Link>
+            <Link to="/profile">{t('Profile')}</Link>
           </> : <>
             <Link to="/login">{t('Login')}</Link>
             <Link to="/register">{t('Register')}</Link>

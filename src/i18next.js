@@ -59,7 +59,24 @@ const resources = {
       "Update":"تحديث",
       "REMOVE":"إزالة",
       "ADD":"إضافة",
-      "UPDATE":"تحديث"
+      "UPDATE":"تحديث",
+      "Profile":"الصفحة الشخصية",
+      "Checkout":"الدفع",
+      "Payment Method":"طريقة الدفع",
+      "Visa":"فيزا",
+      "Cash":"نقدا",
+      "Pay Now":"ادفع الآن",
+      "Proceed to Checkout":"المتابعة إلى الدفع",
+      "Continue Shopping":"متابعة التسوق",
+      "CONTINUE SHOPPING":"متابعة التسوق",
+      "PROCEED TO CHECKOUT":"المتابعة إلى الدفع",
+      "Prouct Details":"تفاصيل المنتج",
+      "Add to Cart":"أضف إلى السلة",
+      "Product Description":"وصف المنتج",
+      "Product Reviews":"مراجعات المنتج",
+      "Related Products":"منتجات ذات صلة",
+      "Products":"المنتجات"
+
     }
   }
 };

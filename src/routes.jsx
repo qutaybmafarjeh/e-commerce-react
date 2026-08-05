@@ -7,6 +7,11 @@ import Cart from "./pages/cart/Cart";
 import Product from "./pages/product/Product";
 import ProductDetails from "./component/products/productDetails";
 import ProtectedRouter from "./ProtectedRouter";
+import Checkout from "./pages/checkout/Checkout";
+import ProfileLayout from "./pages/profile/ProfileLayout";
+import { Info } from "lucide-react";
+import ProfileOrders from "./pages/profile/ProfileOrders";
+import ProfileInfo from "./pages/profile/ProfileInfo";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +37,32 @@ const router = createBrowserRouter([
                 <Cart />
             </ProtectedRouter>
         },
+        {
+            path: "/checkout",
+            element: 
+            <ProtectedRouter>
+                <Checkout />
+            </ProtectedRouter>
+        },
+        {
+           path: "/profile",
+           element: 
+           <ProtectedRouter>
+               <ProfileLayout />
+           </ProtectedRouter>,
+           children: [
+            {
+                index: true,
+                element: <ProfileInfo />
+            },
+            {
+                path: "orders",
+                element: <ProfileOrders />
+            },
+            
+           ]
+            },
+        
        
         {
             path: "/product",

@@ -1,19 +1,23 @@
-import { Box, Button, IconButton, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
+import {
+  Box, Button, IconButton, Table, TableBody, TableCell, TableContainer,
+  TableHead, TableRow, Typography
+} from "@mui/material";
 import CircularProgress from "@mui/material/CircularProgress";
-
 import useCart from "../../hooks/useCart";
 import useRemoveFromCart from "../../hooks/useRemoveFromCart";
 import useUpdateCartItem from "../../hooks/useUpdateCartItem";
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 
 
 export default function Cart() {
-  const {t}=useTranslation();
+  const { t } = useTranslation();
+  const navigate = useNavigate();
 
-  const { data, isLoading, isError } = useCart();
+  const { data, isLoading, isError, error } = useCart();
 
   const { mutate: removeItem, isPending } = useRemoveFromCart();
   const { mutate: updateItem, isPending: isUpdating } = useUpdateCartItem();
@@ -26,9 +30,9 @@ export default function Cart() {
       (action == '-')
       updateItem({ productId, count: item.count - 1 });
     }
-   
+
   }
-  
+
 
   if (isLoading) {
     return <CircularProgress />;
@@ -77,7 +81,7 @@ export default function Cart() {
                 <TableCell>
                   <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
                     <IconButton size="small" disabled={item.count <= 1} >
-                      <RemoveIcon onClick={() => handleUpdate(item.productId, '-')}  />
+                      <RemoveIcon onClick={() => handleUpdate(item.productId, '-')} />
                     </IconButton>
                     <Typography>{item.count}</Typography>
                     <IconButton size="small" >
@@ -103,6 +107,12 @@ export default function Cart() {
 
         </Table>
       </TableContainer>
+      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 5, marginTop: 2 }}>
+
+        <Button variant="contained" onClick={() => navigate('/checkout')}>{t('Proceed to Checkout')}</Button>
+        <Button variant="contained" onClick={() => navigate('/')}>{t('Continue Shopping')}</Button>
+
+      </Box>
 
     </Box>
 
