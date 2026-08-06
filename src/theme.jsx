@@ -1,12 +1,26 @@
 import { createTheme } from "@mui/material";
 
 
-export const theme = createTheme({
+  
+const getTheme =(mode)=>{
+  return createTheme({
    
    palette:{
+    mode:mode,
     primary:{
-        main:'#ff000'
-    }
+        main:'#212121'
+    },
+    components: {
+    MuiLink: {
+      defaultProps: {
+        underline: 'hover',
+      },
+    },
+  },
+
    }
 })
  
+}
+
+export default getTheme;
