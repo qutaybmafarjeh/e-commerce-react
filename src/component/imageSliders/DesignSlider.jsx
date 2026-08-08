@@ -8,10 +8,10 @@ import { Container, Typography } from '@mui/material';
 
 
 const DESIGN_SLIDES = [
-  { id: 1, src: './src/images/image/image1.jpg', alt: '' },
-  { id: 2, src: './src/images/image/iphone.jpg', alt: '' },
-  { id: 3, src: './src/images/image/laptop.jpg', alt: '' },
-  { id: 3, src: './src/images/image/samsung.jpg', alt: '' },
+  { id: 1, src: './src/assets/images/image/image1.jpg', alt: '' },
+  { id: 2, src: './src/assets/images/image/iphone.jpg', alt: '' },
+  { id: 3, src: './src/assets/images/image/laptop.jpg', alt: '' },
+  { id: 3, src: './src/assets/images/image/samsung.jpg', alt: '' },
 ];
 
 export default function DesignSlider() {

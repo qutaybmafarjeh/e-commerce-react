@@ -108,7 +108,7 @@ export default function Navbar() {
 
 
             <Typography>
-              <img src="./src/images/image/KShop.png" width={'100px'} />
+              <img src="./src/assets/images/image/KShop.png" width={'100px'} />
             </Typography>
             <Typography sx={{ display: { xs: 'none', sm: 'block' } }} >
 
