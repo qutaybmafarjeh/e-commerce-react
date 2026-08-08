@@ -86,11 +86,11 @@ export default function Navbar() {
 
   return (
 
-    <nav sx={{ flexGrow: 1 }} >
+    <nav position="sticky" sx={{top:'0',zIndex:'1000'}} sx={{ flexGrow: 1}} >
       <Container maxWidth>
 
 
-        <AppBar position="static">
+        <AppBar>
           <Toolbar sx={{ display: 'flex', gap: 2, justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
             <IconButton
               size="large"
@@ -108,7 +108,7 @@ export default function Navbar() {
 
 
             <Typography>
-              <img src="./src/image/KShop.png" width={'100px'} />
+              <img src="./src/images/image/KShop.png" width={'100px'} />
             </Typography>
             <Typography sx={{ display: { xs: 'none', sm: 'block' } }} >
 
@@ -150,5 +150,6 @@ export default function Navbar() {
         </AppBar>
       </Container>
     </nav>
+    
   );
 }

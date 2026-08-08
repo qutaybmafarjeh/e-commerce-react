@@ -22,8 +22,9 @@ export default function Categoires() {
 
 
   return (
+    
    
-    <Box className="products" component="section" sx={{mt:4}}>
+    <Box className="products" component="section" sx={{mt:10}}>
         <Container maxWidth>
             <Typography variant="h1" component="h2" sx={{ textAlign: 'center', marginTop: 2 }}>
                 {t('Categoires')}
@@ -34,12 +35,12 @@ export default function Categoires() {
                 marginTop: 2, marginLeft: 2, marginRight: 2
             }}>
                 {data.response.data.map((category) => (
-                    <Grid size={{ sm: 6, md: 4 }} key={category.id}>
+                    <Grid size={{ sm: 6, md: 4}} key={category.id}>
                         <Link to={`/Categories/${category.id}`} style={{ textDecoration: 'none' }}>
                             <Card sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
                                
                                 <CardContent>
-                                    <Typography variant="h5" component="h3">
+                                    <Typography variant="h5" component="h3" sx={{mt:'20px'}}>
                                         {category.name}
                                         
                                     </Typography>
