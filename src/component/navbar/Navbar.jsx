@@ -2,14 +2,15 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import useAuthStore from '../../store/useAuthStore';
 import { Box, Fullscreen, MenuIcon } from 'lucide-react';
-import { AppBar, Button, Container, FormControlLabel, FormGroup, IconButton, MenuItem, MenuList, Paper, styled, Switch, Toolbar, Typography } from '@mui/material';
+import { AppBar, Button, Container, FormControlLabel, FormGroup, IconButton, Menu, MenuItem, MenuList, Paper, styled, Switch, Toolbar, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import i18n from '../../i18next';
 import useThemeStore from '../../store/useThemeStore';
+import Fade from '@mui/material/Fade';
 
 
 export default function Navbar() {
-  
+
   const navigator = useNavigate();
   const token = useAuthStore((state) => state.token);
   const Logout = useAuthStore((state) => state.Logout);
@@ -81,27 +82,71 @@ export default function Navbar() {
     },
   }));
 
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
 
 
   return (
 
-    <nav position="sticky" sx={{top:'0',zIndex:'1000'}} sx={{ flexGrow: 1}} >
+    <nav position="sticky" sx={{ top: '0', zIndex: '1000' }} sx={{ flexGrow: 1 }} >
       <Container maxWidth>
 
 
         <AppBar>
-          <Toolbar sx={{ display: 'flex', gap: 2, justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
+          <Toolbar sx={{
+            display: 'flex', gap: 2, justifyContent: 'space-between', alignItems: 'center',
+            flexWrap: 'wrap'
+          }}>
             <IconButton
               size="large"
               edge="start"
               color="inherit"
               aria-label="menu"
               sx={{ mr: 2, display: { xs: 'block', sm: 'none' } }}
+
             >
+              
+                <MenuIcon id="fade-button"
+                aria-controls={open ? 'fade-menu' : undefined}
+                aria-haspopup="true"
+                aria-expanded={open}
+                onClick={handleClick}/>
+             
+              <Menu
+                id="fade-menu"
+                slotProps={{
+                  list: {
+                    'aria-labelledby': 'fade-button',
+                  },
+                }}
+                slots={{ transition: Fade }}
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+              >
+                <MenuItem onClick={handleClose}><Link to="/" 
+                style={{ textDecoration: "none",color:"black" }}>{t('Home')}</Link></MenuItem>
+                <MenuItem onClick={handleClose}><Link to="/product" 
+                style={{ textDecoration: "none", color:"black" }}>{t('Product')}</Link></MenuItem>
+                <MenuItem onClick={handleClose}><Link to="/profile" style={{ textDecoration: "none", 
+                  color:"black" }}>{t('Profile')}</Link></MenuItem>
+                  <MenuItem>
+                   <Link to="/login" style={{ textDecoration: "none", color: "black" }}>{t('Login')}</Link>
+                  </MenuItem>
+                  <MenuItem>
+                   <Link to="/register" style={{ textDecoration: "none", color: "black" }}>{t('Register')}</Link>
+                  </MenuItem>
+              </Menu>
+             
 
 
-              <MenuIcon />
 
 
             </IconButton >
@@ -131,7 +176,7 @@ export default function Navbar() {
                 }
               </Typography>
             </Typography>
-            <Typography sx={{display:'flex'}}>
+            <Typography sx={{ display: 'flex' }}>
               <Button color="inherit" onClick={() => changeLanguage()}>
                 {i18n.language === 'en' ? 'AR' : 'EN'}
               </Button>
@@ -140,16 +185,16 @@ export default function Navbar() {
                   control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
                   onClick={() => toggleMode()}
                 />
-              
-               
-                
+
+
+
               </FormGroup>
-              
+
             </Typography>
           </Toolbar>
         </AppBar>
       </Container>
     </nav>
-    
+
   );
 }

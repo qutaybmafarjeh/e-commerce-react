@@ -16,7 +16,7 @@
     "@fontsource-variable/geist": "^5.2.9",
     "@fontsource/roboto": "^5.2.10",
     "@hookform/resolvers": "^5.4.0",
-    "@mui/icons-material": "^9.1.1",
+    "@mui/icons-material": "^9.3.1",
     "@mui/material": "^9.1.1",
     "@tailwindcss/cli": "^4.3.2",
     "@tailwindcss/vite": "^4.3.2",

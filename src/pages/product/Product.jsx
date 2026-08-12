@@ -17,7 +17,7 @@ const Product = () => {
          }
 
   return (
-     <Box className="products" component="section" >
+     <Box className="products" component="section" sx={{mt:10}} >
             <Container maxWidth>
                 <Typography variant="h1" component="h2" sx={{ textAlign: 'center', marginTop: 2 }}>
                     {t('Products')}

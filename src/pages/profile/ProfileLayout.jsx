@@ -7,7 +7,7 @@ export default function ProfileLayout() {
   const { t } = useTranslation();
   return (
     <Box>
-      <Typography variant='h1' sx={{ textAlign: 'center', mt: 4 }}>
+      <Typography variant='h1' sx={{ textAlign: 'center', mt: 4 ,mt:10}}>
         {t('Profile')}
       </Typography>
 

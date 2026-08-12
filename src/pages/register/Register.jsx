@@ -33,7 +33,7 @@ export default function Register() {
 
 
   return (
-    <Box component="section" className="registerPage">
+    <Box component="section" className="registerPage" sx={{mt:10}}>
       <Typography variant="h1" component="h3">
         {t('Register')}
       </Typography>
