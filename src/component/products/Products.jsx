@@ -8,10 +8,10 @@ import { useTranslation } from 'react-i18next';
 
 
 const Products = () => {
-
+    const { t } = useTranslation();
 
     const { data, products, isLoading, isError, error } = useProducts();
-    const { t } = useTranslation();
+
     if (isLoading) {
         return <CircularProgress />;
     }
@@ -25,9 +25,9 @@ const Products = () => {
 
 
     return (
-        <Box className="products" component="section" sx={{mt:10}}>
+        <Box className="products" component="section" sx={{ mt: 10 }}>
             <Container maxWidth>
-                <Typography variant="h1" component="h2" sx={{ textAlign: 'center', marginTop: 2 }}>
+                <Typography variant="h2" component="h6" sx={{ textAlign: 'center', marginTop: 2 }}>
                     {t('Products')}
                 </Typography>
 

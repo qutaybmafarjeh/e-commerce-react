@@ -17,7 +17,7 @@ export default function Footer() {
 
           </Box>
 
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', gap: 16, mb: 6, m: 4 }}>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between',flexWrap:'wrap',alignItems:'center' ,gap: 16, mb: 6, m: 4 }}>
             <nav>
               <Typography sx={{ color: 'white', mb: 1 }}>Company</Typography>
               <Box sx={{ display: 'flex', justifyContent: 'flex-end', flexDirection: 'column',flexWrap:'wrap' }}>

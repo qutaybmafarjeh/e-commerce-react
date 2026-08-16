@@ -1,23 +1,31 @@
 import React from 'react'
 import useProducts from '../../hooks/useProducts';
+import { Box, Card, CardContent, CardMedia, CircularProgress, Container, Grid, Typography } from '@mui/material';
+import { data, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Box, Card, CardContent, CardMedia, CircularProgress, Container, Grid, Link, Typography } from '@mui/material';
+
+
+
 
 const Product = () => {
-  const { data, product, isLoading, isError, error } = useProducts();
+    const { t } = useTranslation();
 
-     const { t } = useTranslation();
-         if (isLoading) {
-             return <CircularProgress />;
-         }
-     
-     
-         if (isError) {
-             return <div>Error: {error.message}</div>;
-         }
+    const { data, products, isLoading, isError, error } = useProducts();
 
-  return (
-     <Box className="products" component="section" sx={{mt:10}} >
+    if (isLoading) {
+        return <CircularProgress />;
+    }
+
+
+    if (isError) {
+        return <div>Error: {error.message}</div>;
+    }
+
+
+
+
+    return (
+        <Box className="products" component="section" sx={{ mt: 10 }}>
             <Container maxWidth>
                 <Typography variant="h1" component="h2" sx={{ textAlign: 'center', marginTop: 2 }}>
                     {t('Products')}
@@ -30,16 +38,15 @@ const Product = () => {
                     {data.response.data.map((product) => (
                         <Grid size={{ sm: 6, md: 4 }} key={product.id}>
                             <Link to={`/products/${product.id}`} style={{ textDecoration: 'none' }}>
-                                <Card sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center'
-                                    , justifyContent: 'center' }}>
-                                    <CardMedia 
+                                <Card sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                                    <CardMedia
                                         component="img"
                                         image={product.image}
                                         alt={product.name}
                                         sx={{ width: 200 }}
                                     ></CardMedia>
                                     <CardContent>
-                                        <Typography variant="h5" component="h3" >
+                                        <Typography variant="h5" component="h3">
                                             {product.name}
                                             <Typography variant="body2" color="text.secondary">
                                                 price: {product.price}
@@ -61,7 +68,10 @@ const Product = () => {
             </Container>
         </Box>
 
-  )
+
+
+
+    )
 }
- 
-export default Product;
+
+export default Product

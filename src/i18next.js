@@ -75,7 +75,8 @@ const resources = {
       "Product Description":"وصف المنتج",
       "Product Reviews":"مراجعات المنتج",
       "Related Products":"منتجات ذات صلة",
-      "Products":"المنتجات"
+      "Products":"المنتجات",
+      "New Products":"المنتجات الجديده"
 
     }
   }

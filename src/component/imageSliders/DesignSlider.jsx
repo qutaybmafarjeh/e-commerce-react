@@ -16,7 +16,7 @@ const DESIGN_SLIDES = [
 
 export default function DesignSlider() {
   return (
-    <Typography position="relative" sx={{ margin: '10 auto',marginTop:'80px'}}>
+    <Typography position="relative" sx={{ margin: '10 auto',marginTop:'10px'}}>
       <Container maxWidth>
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
@@ -26,7 +26,7 @@ export default function DesignSlider() {
         pagination={{ clickable: true }}
         autoplay={{ delay: 4000, disableOnInteraction: false }}
         loop={true}
-        style={{ borderRadius: '10px', overflow: 'hidden' }}
+        style={{ borderRadius: '6px', overflow: 'hidden' }}
       >
         {DESIGN_SLIDES.map((slide) => (
           <SwiperSlide key={slide.id}>

@@ -2,6 +2,7 @@ import React from 'react'
 import Categoires from '../../component/categoires/Categoires'
 import Products from '../../component/products/Products'
 import DesignSlider from '../../component/imageSliders/DesignSlider'
+import NewProducts from '../../component/newProduct/NewProducts'
 
 
 
@@ -10,6 +11,7 @@ export default function Home() {
     <>
     <DesignSlider/>
     <Categoires /> 
+    <NewProducts/>
     <Products />
     </>
   )
