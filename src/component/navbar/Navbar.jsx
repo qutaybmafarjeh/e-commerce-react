@@ -110,7 +110,7 @@ export default function Navbar() {
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton component={Link} to="/product">
-            <ListItemText primary={t('Product')} />
+            <ListItemText primary={t('Shop')} />
           </ListItemButton>
         </ListItem>
 

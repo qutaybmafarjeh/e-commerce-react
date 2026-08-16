@@ -50,7 +50,7 @@ export default function Cart() {
   return (
 
     <Box coponent="section" sx={{mt:10}}>
-      <Typography varient='h1'  >
+      <Typography varient='h2' component="h4">
         {t('Cart')}
       </Typography>
 
