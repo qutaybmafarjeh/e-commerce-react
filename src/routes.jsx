@@ -4,14 +4,15 @@ import Register from "./pages/register/Register";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Cart from "./pages/cart/Cart";
-import Product from "./pages/product/Product";
-import ProductDetails from "./component/products/productDetails";
+import Shop from "./pages/product/Product";
 import ProtectedRouter from "./ProtectedRouter";
 import Checkout from "./pages/checkout/Checkout";
 import ProfileLayout from "./pages/profile/ProfileLayout";
 import { Info } from "lucide-react";
 import ProfileOrders from "./pages/profile/ProfileOrders";
 import ProfileInfo from "./pages/profile/ProfileInfo";
+import ProductDetails from "./component/products/ProductDetails";
+import Product from "./pages/product/Product";
 
 const router = createBrowserRouter([
   {
