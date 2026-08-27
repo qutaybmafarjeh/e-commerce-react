@@ -41,7 +41,6 @@ export default function ProductDetails() {
       <Paper elevation={2} sx={{ borderRadius: 4, overflow: 'hidden', p: { xs: 2, md: 4 } }}>
         <Grid container spacing={4} alignItems="center">
           
-          {/* Product Image Column */}
           <Grid item xs={12} md={6}>
             <Box
               sx={{

@@ -16,7 +16,7 @@ export default function Footer() {
       }}
     >
       <Container maxWidth="lg">
-        <Grid container spacing={4} justifyContent="space-between">
+        <Grid container spacing={4} justifycontent="space-between">
           
           <Grid item xs={12} md={4}>
             <Box sx={{ mb: 2 }}>
@@ -79,7 +79,6 @@ export default function Footer() {
             </Stack>
           </Grid>
 
-          {/* Social Media Column */}
           <Grid item xs={12} sm={4} md={3}>
             <Typography 
               variant="subtitle1" 
@@ -89,7 +88,7 @@ export default function Footer() {
             >
               Social Media
             </Typography>
-            <Stack direction="row" spacing={1.5} alignItems="center">
+            <Stack direction="row" spacing={1.5} alignitems="center">
               <Link underline="none" href="#" sx={{ transition: 'transform 0.2s', '&:hover': { transform: 'scale(1.1)' } }}>
                 <img 
                   src="./src/assets/images/footer-image/x.jpg" 
@@ -118,7 +117,7 @@ export default function Footer() {
 
         <Divider sx={{ my: 4, borderColor: 'rgba(255, 255, 255, 0.1)' }} />
 
-        <Typography variant="body2" color="grey.600" textAlign="center">
+        <Typography variant="body2" color="grey.600" textalign="center">
           {currentYear} KShop. All rights reserved.
         </Typography>
       </Container>
