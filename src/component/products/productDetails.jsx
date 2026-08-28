@@ -1,6 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useProduct from '../../hooks/useProduct';
-import {Box, Button, CircularProgress, Typography, Container, Grid, Paper, Stack, Chip, Divider 
+import {
+  Box,
+  Button,
+  CircularProgress,
+  Typography,
+  Container,
+  Grid,
+  Paper,
+  Stack,
+  Chip,
+  Divider,
+  Snackbar,
+  Alert
 } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useParams } from 'react-router-dom';
@@ -8,10 +20,31 @@ import useAddToCart from '../../hooks/useAddToCart';
 
 export default function ProductDetails() {
   const { id } = useParams();
-  const { mutate: AddToCart } = useAddToCart();
-  const { data, product, isLoading, isError, error } = useProduct(id);
+  const { mutate: AddToCart, isPending } = useAddToCart();
+  const { data, isLoading, isError, error } = useProduct(id);
 
- 
+  const [openAlert, setOpenAlert] = useState(false);
+
+  const handleAddToCart = () => {
+    AddToCart(
+      { productId: data?.response?.id, count: 1 },
+      {
+        onSuccess: () => {
+          setOpenAlert(true);
+        }
+      }
+    );
+    // Trigger alert immediately on click
+    setOpenAlert(true);
+  };
+
+  const handleCloseAlert = () => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpenAlert(false);
+  };
+
   if (isLoading) {
     return (
       <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '60vh' }}>
@@ -20,7 +53,6 @@ export default function ProductDetails() {
     );
   }
 
-  
   if (isError || !data?.response) {
     return (
       <Container maxWidth="md" sx={{ mt: 8 }}>
@@ -40,7 +72,7 @@ export default function ProductDetails() {
     <Container maxWidth="lg" sx={{ py: 6 }}>
       <Paper elevation={2} sx={{ borderRadius: 4, overflow: 'hidden', p: { xs: 2, md: 4 } }}>
         <Grid container spacing={4} alignItems="center">
-          
+          {/* Product Image */}
           <Grid item xs={12} md={6}>
             <Box
               sx={{
@@ -48,7 +80,7 @@ export default function ProductDetails() {
                 height: { xs: 300, md: 450 },
                 display: 'flex',
                 alignItems: 'center',
-                justify: 'center',
+                justifyContent: 'center',
                 bgcolor: 'grey.50',
                 borderRadius: 3,
                 overflow: 'hidden',
@@ -72,7 +104,7 @@ export default function ProductDetails() {
             </Box>
           </Grid>
 
-       
+          {/* Product Details */}
           <Grid item xs={12} md={6}>
             <Stack spacing={2.5}>
               <Box>
@@ -96,8 +128,9 @@ export default function ProductDetails() {
                 <Button
                   variant="contained"
                   size="large"
+                  disabled={isPending}
                   startIcon={<ShoppingCartIcon />}
-                  onClick={() => AddToCart({ productId: data.response.id, count: 1 })}
+                  onClick={handleAddToCart}
                   sx={{
                     py: 1.5,
                     px: 4,
@@ -111,14 +144,30 @@ export default function ProductDetails() {
                     },
                   }}
                 >
-                  Add to Cart
+                  {isPending ? 'Adding...' : 'Add to Cart'}
                 </Button>
               </Box>
             </Stack>
           </Grid>
-
         </Grid>
       </Paper>
+
+      {/* Alert Notification */}
+      <Snackbar
+        open={openAlert}
+        autoHideDuration={3000}
+        onClose={handleCloseAlert}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+      >
+        <Alert
+          onClose={handleCloseAlert}
+          severity="success"
+          variant="filled"
+          sx={{ width: '100%', borderRadius: 2, fontWeight: 600 }}
+        >
+          "{name}" has been added to your cart!
+        </Alert>
+      </Snackbar>
     </Container>
   );
 }

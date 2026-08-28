@@ -206,7 +206,7 @@ export default function Navbar() {
               {t('Home')}
             </Button>
             <Button component={Link} to="/product" color="inherit" sx={{ fontWeight: 500 }}>
-              {t('Product')}
+              {t('Shop')}
             </Button>
 
             {token ? (
@@ -215,7 +215,7 @@ export default function Navbar() {
                   {t('Cart')}
                 </Button>
                 <Button component={Link} to="/profile" color="inherit" sx={{ fontWeight: 500 }}>
-                  {t('Profile')}
+                  {t('About Us')}
                 </Button>
                 <Button
                   onClick={handleLogout}
@@ -247,7 +247,7 @@ export default function Navbar() {
           </Stack>
 
 
-          <Stack direction="row" spacing={1} alignItems="center">
+          <Stack direction="row" spacing={1} alignitems="center">
             <Button
               onClick={changeLanguage}
               size="small"
@@ -267,7 +267,7 @@ export default function Navbar() {
             <MaterialUISwitch
               checked={mode === 'dark'}
               onChange={toggleMode}
-              inputProps={{ 'aria-label': 'theme toggle' }}
+              inputprops={{ 'aria-label': 'theme toggle' }}
             />
           </Stack>
         </Toolbar>

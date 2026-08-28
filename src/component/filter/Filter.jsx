@@ -78,8 +78,8 @@ const Products = () => {
                                 >
                                     <FormControlLabel value="all" control={<Radio size="small" />} label="All" />
                                     <FormControlLabel value="electronics" control={<Radio size="small" />} label="Electronics" />
-                                    <FormControlLabel value="clothing" control={<Radio size="small" />} label="Clothing" />
-                                    <FormControlLabel value="accessories" control={<Radio size="small" />} label="Accessories" />
+                                    <FormControlLabel value="clothing" control={<Radio size="small" />} label="Phones" />
+                                    <FormControlLabel value="accessories" control={<Radio size="small" />} label="TV" />
                                 </RadioGroup>
                             </Box>
 

@@ -72,13 +72,13 @@ const PhonesSection = () => {
                     sx={{
                         display: 'flex',
                         justify: 'space-between',
-                        alignItems: 'center',
+                        alignitems: 'center',
                         mb: 4,
                         flexWrap: 'wrap',
                         gap: 2
                     }}
                 >
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+                    <Box sx={{ display: 'flex', alignitems: 'center', gap: 1.5 }}>
                         <SmartphoneIcon color="primary" sx={{ fontSize: 36 }} />
                         <Typography variant="h4" component="h2" fontWeight="700">
                             {t('Smartphones')}

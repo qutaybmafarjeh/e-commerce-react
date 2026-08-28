@@ -76,7 +76,12 @@ const resources = {
       "Product Reviews":"مراجعات المنتج",
       "Related Products":"منتجات ذات صلة",
       "Products":"المنتجات",
-      "New Products":"المنتجات الجديده"
+      "New Products":"المنتجات الجديده",
+      "Shop":"المتجر",
+      "SHOP":"المتجر",
+      "Your cart is empty":"السله فارغه",
+      "About Us":"معلومات عن الموقع",
+      "ABOUT US":"معلومات عن الموقع"
 
     }
   }
