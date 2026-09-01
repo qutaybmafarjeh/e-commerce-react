@@ -11,6 +11,7 @@ import ProfileLayout from "./pages/profile/ProfileLayout";
 import { Info } from "lucide-react";
 import ProfileOrders from "./pages/profile/ProfileOrders";
 import ProfileInfo from "./pages/profile/ProfileInfo";
+import ProductDetails from "./component/products/ProductDetails";
 import Product from "./pages/product/Product";
 
 const router = createBrowserRouter([
