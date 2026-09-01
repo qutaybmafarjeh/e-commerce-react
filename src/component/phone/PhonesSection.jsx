@@ -1,13 +1,11 @@
 import React from 'react';
 import {
     Box, Container, Grid, Card, CardContent, CardMedia, CardActionArea,
-    Typography, Chip, Rating, Button
+    Typography, Chip, Rating, Stack
 } from '@mui/material';
 import SmartphoneIcon from '@mui/icons-material/Smartphone';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-
 
 const phoneProducts = [
     {
@@ -68,50 +66,51 @@ const PhonesSection = () => {
     return (
         <Box component="section" sx={{ py: 8, bgcolor: 'grey.50' }}>
             <Container maxWidth="xl">
-                <Box
-                    sx={{
-                        display: 'flex',
-                        justify: 'space-between',
-                        alignitems: 'center',
-                        mb: 4,
-                        flexWrap: 'wrap',
-                        gap: 2
-                    }}
-                >
-                    <Box sx={{ display: 'flex', alignitems: 'center', gap: 1.5 }}>
-                        <SmartphoneIcon color="primary" sx={{ fontSize: 36 }} />
-                        <Typography variant="h4" component="h2" fontWeight="700">
+                <Box sx={{ mb: 5, textAlign: 'center' }}>
+                    <Stack direction="row" alignItems="center" justifyContent="center" spacing={1.5} sx={{ mb: 1 }}>
+                        <Box
+                            sx={{
+                                p: 1,
+                                borderRadius: 2,
+                                bgcolor: 'primary.50',
+                                color: 'primary.main',
+                                display: 'flex',
+                            }}
+                        >
+                            <SmartphoneIcon sx={{ fontSize: 32 }} />
+                        </Box>
+                        <Typography variant="h4" component="h2" fontWeight="800" letterSpacing="-0.5px">
                             {t('Smartphones')}
                         </Typography>
-                    </Box>
-
-                    <Button
-                        component={Link}
-                        to="/products?category=electronics"
-                        endIcon={<ArrowForwardIcon />}
-                        sx={{ fontWeight: 600 }}
-                    >
-                        {t('View All Phones')}
-                    </Button>
+                    </Stack>
+                    <Typography variant="body1" color="text.secondary" maxWidth="600px" mx="auto">
+                    </Typography>
                 </Box>
 
                 <Grid container spacing={3}>
                     {phoneProducts.map((phone) => (
                         <Grid item xs={12} sm={6} md={4} lg={2.4} key={phone.id}>
                             <Card
-                                elevation={2}
+                                elevation={0}
                                 sx={{
                                     height: '100%',
-                                    borderRadius: 3,
+                                    borderRadius: 4,
+                                    border: '1px solid',
+                                    borderColor: 'grey.200',
+                                    bgcolor: 'background.paper',
                                     position: 'relative',
-                                    transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
+                                    overflow: 'hidden',
+                                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                                     '&:hover': {
-                                        transform: 'translateY(-4px)',
-                                        boxShadow: 6,
+                                        transform: 'translateY(-6px)',
+                                        boxShadow: '0 12px 24px -10px rgba(0, 0, 0, 0.1)',
+                                        borderColor: 'transparent',
+                                        '& .product-image': {
+                                            transform: 'scale(1.06)',
+                                        },
                                     },
                                 }}
                             >
-                               
                                 {phone.badge && (
                                     <Chip
                                         label={phone.badge}
@@ -119,11 +118,14 @@ const PhonesSection = () => {
                                         size="small"
                                         sx={{
                                             position: 'absolute',
-                                            top: 12,
-                                            left: 12,
+                                            top: 14,
+                                            left: 14,
                                             zIndex: 2,
                                             fontWeight: 700,
-                                            fontSize: '0.75rem',
+                                            fontSize: '0.7rem',
+                                            borderRadius: '6px',
+                                            textTransform: 'uppercase',
+                                            px: 0.5,
                                         }}
                                     />
                                 )}
@@ -136,75 +138,82 @@ const PhonesSection = () => {
                                         display: 'flex',
                                         flexDirection: 'column',
                                         alignItems: 'stretch',
-                                        justifyContent: 'space-between',
+                                        justify: 'space-between',
                                     }}
                                 >
-                        
                                     <Box
                                         sx={{
                                             width: '100%',
-                                            height: 200,
-                                            p: 2,
+                                            height: 220,
+                                            p: 3,
                                             display: 'flex',
                                             alignItems: 'center',
                                             justifyContent: 'center',
-                                            bgcolor: 'white',
+                                            bgcolor: 'grey.50',
+                                            borderBottom: '1px solid',
+                                            borderColor: 'grey.100',
                                         }}
                                     >
                                         <CardMedia
                                             component="img"
                                             image={phone.image}
                                             alt={phone.name}
+                                            className="product-image"
                                             sx={{
                                                 maxHeight: '100%',
                                                 maxWidth: '100%',
                                                 objectFit: 'contain',
+                                                transition: 'transform 0.3s ease-in-out',
                                             }}
                                         />
                                     </Box>
 
-                                    <CardContent sx={{ flexGrow: 1, p: 2 }}>
+                                    <CardContent sx={{ flexGrow: 1, p: 2.5 }}>
                                         <Typography
                                             variant="subtitle1"
                                             component="h3"
-                                            fontWeight="600"
+                                            fontWeight="700"
                                             sx={{
-                                                fontSize: '1rem',
+                                                fontSize: '0.95rem',
+                                                lineHeight: 1.3,
                                                 mb: 1,
                                                 overflow: 'hidden',
                                                 textOverflow: 'ellipsis',
-                                                whiteSpace: 'nowrap',
+                                                display: '-webkit-box',
+                                                WebkitLineClamp: 2,
+                                                WebkitBoxOrient: 'vertical',
+                                                minHeight: '2.6em',
                                             }}
                                         >
                                             {phone.name}
                                         </Typography>
 
-                                        <Box sx={{ display: 'flex', alignItems: 'center', mb: 1.5 }}>
+                                        <Stack direction="row" alignItems="center" spacing={0.5} sx={{ mb: 2 }}>
                                             <Rating
                                                 value={phone.rating}
                                                 precision={0.1}
                                                 readOnly
                                                 size="small"
+                                                sx={{ fontSize: '0.9rem' }}
                                             />
-                                            <Typography variant="caption" color="text.secondary" sx={{ ml: 0.5 }}>
-                                                ({phone.reviewsCount})
+                                            <Typography variant="caption" color="text.secondary" fontWeight="600">
+                                                {phone.rating} ({phone.reviewsCount})
                                             </Typography>
-                                        </Box>
-
-                                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                                            <Typography variant="h6" fontWeight="700" color="primary.main">
+                                        </Stack>
+                                        <Stack direction="row" alignItems="baseline" spacing={1}>
+                                            <Typography variant="h6" fontWeight="800" color="primary.main">
                                                 ${phone.price}
                                             </Typography>
                                             {phone.oldPrice && (
                                                 <Typography
                                                     variant="body2"
-                                                    color="text.secondary"
-                                                    sx={{ textDecoration: 'line-through' }}
+                                                    color="text.disabled"
+                                                    sx={{ textDecoration: 'line-through', fontWeight: 500 }}
                                                 >
                                                     ${phone.oldPrice}
                                                 </Typography>
                                             )}
-                                        </Box>
+                                        </Stack>
                                     </CardContent>
                                 </CardActionArea>
                             </Card>

@@ -9,7 +9,9 @@ import {
   Chip,
   Divider,
   Stack,
-  Button
+  Button,
+  Card,
+  CardContent
 } from '@mui/material';
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import VerifiedIcon from '@mui/icons-material/Verified';
@@ -20,177 +22,190 @@ import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
 import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';
 import ShieldOutlinedIcon from '@mui/icons-material/ShieldOutlined';
 import SupportAgentOutlinedIcon from '@mui/icons-material/SupportAgentOutlined';
+import StarIcon from '@mui/icons-material/Star';
 
 export default function ProfileInfo() {
   return (
-    <Container maxWidth="md" sx={{ py: 6 }}>
+    <Container maxWidth="lg" sx={{ py: 6 }}>
       <Paper
         elevation={0}
         sx={{
+          p: { xs: 3, md: 4 },
+          mb: 4,
           borderRadius: 4,
-          border: '1px solid',
-          borderColor: 'divider',
+          background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+          color: 'common.white',
+          position: 'relative',
           overflow: 'hidden'
         }}
       >
-        <Box
-          sx={{
-            height: 140,
-            bgcolor: 'primary.main',
-            backgroundImage: 'linear-gradient(135deg, #1976d2 0%, #0d47a1 100%)',
-            position: 'relative'
-          }}
-        />
-        <Box sx={{ px: { xs: 3, sm: 4 }, pb: 3, pt: 0, position: 'relative' }}>
-          <Stack
-            direction={{ xs: 'column', sm: 'row' }}
-            spacing={2}
-            alignItems={{ xs: 'center', sm: 'flex-end' }}
-            sx={{ mt: -6, mb: 3 }}
-          >
-            <Avatar
-              sx={{
-                width: 100,
-                height: 100,
-                bgcolor: 'common.white',
-                color: 'primary.main',
-                boxShadow: 3,
-                border: '4px solid white'
-              }}
-            >
-              <StorefrontIcon sx={{ fontSize: 50 }} />
-            </Avatar>
+        <Grid container spacing={3} alignItems="center">
+          <Grid item xs={12} md={8}>
+            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={3} alignItems="center">
+              <Avatar
+                sx={{
+                  width: 90,
+                  height: 90,
+                  bgcolor: 'primary.main',
+                  color: 'common.white',
+                  boxShadow: '0 0 20px rgba(25, 118, 210, 0.5)',
+                  border: '3px solid rgba(255,255,255,0.2)'
+                }}
+              >
+                <StorefrontIcon sx={{ fontSize: 46 }} />
+              </Avatar>
 
-            <Box sx={{ textAlign: { xs: 'center', sm: 'left' }, flexGrow: 1 }}>
-              <Stack direction="row" alignItems="center" spacing={1} justifyContent={{ xs: 'center', sm: 'flex-start' }}>
-                <Typography variant="h5" fontWeight="800">
-                  KShop
+              <Box sx={{ textalign: { xs: 'center', sm: 'left' } }}>
+                <Stack direction="row" alignitems="center" spacing={1} justifycontent={{ xs: 'center', sm: 'flex-start' }}>
+                  <Typography variant="h4" fontWeight="800" letterSpacing="-0.5px">
+                    KShop
+                  </Typography>
+                  <VerifiedIcon color="primary" />
+                  <Chip
+                    label="Official Store"
+                    size="small"
+                    sx={{
+                      bgcolor: 'rgba(46, 125, 50, 0.2)',
+                      color: '#66bb6a',
+                      border: '1px solid #4caf50',
+                      fontWeight: 700
+                    }}
+                  />
+                </Stack>
+                <Typography variant="body1" sx={{ opacity: 0.8, mt: 0.5 }}>
+                  Your Premium Online Shopping Destination
                 </Typography>
-                <VerifiedIcon color="primary" fontSize="small" />
-              </Stack>
-              <Typography variant="body2" color="text.secondary">
-                Your Premium Online Shopping Destination
-              </Typography>
-            </Box>
-
-            <Chip
-              label="Official Store"
-              color="success"
-              variant="outlined"
-              size="small"
-              sx={{ fontWeight: 600 }}
-            />
-          </Stack>
-
-          <Divider sx={{ my: 3 }} />
-          <Typography variant="h6" fontWeight="700" gutterBottom>
-            About KShop
-          </Typography>
-          <Typography variant="body2" color="text.secondary" paragraph sx={{ lineHeight: 1.7 }}>
-            Welcome to KShop! We provide high-quality products curated for your daily lifestyle needs.
-            From electronics to daily essentials, we focus on delivering top-tier items with rapid delivery
-            and dependable customer care.
-          </Typography>
-          <Grid container spacing={2} sx={{ my: 2 }}>
-            <Grid item xs={12} sm={4}>
-              <Paper elevation={0} sx={{ p: 2, bgcolor: 'action.hover', borderRadius: 3 }}>
-                <Stack direction="row" spacing={1.5} alignItems="center">
-                  <LocalShippingOutlinedIcon color="primary" />
-                  <Box>
-                    <Typography variant="subtitle2" fontWeight="700">
-                      Fast Shipping
-                    </Typography>
-                    <Typography variant="caption" color="text.secondary">
-                      Free delivery on bulk orders
-                    </Typography>
-                  </Box>
-                </Stack>
-              </Paper>
-            </Grid>
-
-            <Grid item xs={12} sm={4}>
-              <Paper elevation={0} sx={{ p: 2, bgcolor: 'action.hover', borderRadius: 3 }}>
-                <Stack direction="row" spacing={1.5} alignItems="center">
-                  <ShieldOutlinedIcon color="primary" />
-                  <Box>
-                    <Typography variant="subtitle2" fontWeight="700">
-                      Secure Checkout
-                    </Typography>
-                    <Typography variant="caption" color="text.secondary">
-                      100% Protected payments
-                    </Typography>
-                  </Box>
-                </Stack>
-              </Paper>
-            </Grid>
-
-            <Grid item xs={12} sm={4}>
-              <Paper elevation={0} sx={{ p: 2, bgcolor: 'action.hover', borderRadius: 3 }}>
-                <Stack direction="row" spacing={1.5} alignItems="center">
-                  <SupportAgentOutlinedIcon color="primary" />
-                  <Box>
-                    <Typography variant="subtitle2" fontWeight="700">
-                      24/7 Support
-                    </Typography>
-                    <Typography variant="caption" color="text.secondary">
-                      Dedicated customer team
-                    </Typography>
-                  </Box>
-                </Stack>
-              </Paper>
-            </Grid>
+              </Box>
+            </Stack>
           </Grid>
-
-          <Divider sx={{ my: 3 }} />
-          <Grid container spacing={3}>
-            <Grid item xs={12} sm={6}>
-              <Typography variant="subtitle1" fontWeight="700" gutterBottom>
-                Contact Details
-              </Typography>
-              <Stack spacing={2} sx={{ mt: 1.5 }}>
-                <Stack direction="row" spacing={1.5} alignItems="center">
-                  <EmailOutlinedIcon color="action" fontSize="small" />
-                  <Typography variant="body2" color="text.secondary">
-                    support@kshop.com
-                  </Typography>
-                </Stack>
-                <Stack direction="row" spacing={1.5} alignItems="center">
-                  <PhoneOutlinedIcon color="action" fontSize="small" />
-                  <Typography variant="body2" color="text.secondary">
-                    +962777187129
-                  </Typography>
-                </Stack>
-                <Stack direction="row" spacing={1.5} alignItems="center">
-                  <LocationOnOutlinedIcon color="action" fontSize="small" />
-                  <Typography variant="body2" color="text.secondary">
-                    Jordan / Al-Salt
-                  </Typography>
-                </Stack>
-              </Stack>
-            </Grid>
-
-            <Grid item xs={12} sm={6}>
-              <Typography variant="subtitle1" fontWeight="700" gutterBottom>
-                Working Hours
-              </Typography>
-              <Stack spacing={2} sx={{ mt: 1.5 }}>
-                <Stack direction="row" spacing={1.5} alignItems="center">
-                  <AccessTimeOutlinedIcon color="action" fontSize="small" />
-                  <Typography variant="body2" color="text.secondary">
-                    Monday – Friday: 9:00 AM – 8:00 PM
-                  </Typography>
-                </Stack>
-                <Stack direction="row" spacing={1.5} alignItems="center">
-                  <AccessTimeOutlinedIcon color="action" fontSize="small" />
-                  <Typography variant="body2" color="text.secondary">
-                    Saturday – Sunday: 10:00 AM – 6:00 PM
-                  </Typography>
-                </Stack>
-              </Stack>
-            </Grid>
-          </Grid>
-        </Box>
+        </Grid>
       </Paper>
+
+      <Grid container spacing={4}>
+        <Grid item xs={12} md={7}>
+          <Paper
+            elevation={0}
+            sx={{
+              p: 4,
+              borderRadius: 4,
+              border: '1px solid',
+              borderColor: 'divider',
+              height: '100%'
+            }}
+          >
+            <Typography variant="h6" fontWeight="800" gutterBottom>
+              About Our Store
+            </Typography>
+            <Typography variant="body1" color="text.secondary" paragraph sx={{ lineHeight: 1.8, mb: 4 }}>
+              Welcome to KShop! We provide high-quality products curated for your daily lifestyle needs.
+              From modern electronics to essential home items, our mission is focused on delivering top-tier 
+              products paired with rapid shipping and dependable customer service.
+            </Typography>
+
+            <Divider sx={{ my: 3 }} />
+
+            <Typography variant="subtitle1" fontWeight="700" sx={{ mb: 2 }}>
+              Why Shop With Us?
+            </Typography>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={4}>
+                <Card elevation={0} sx={{ bgcolor: 'grey.50', borderRadius: 3, border: '1px solid', borderColor: 'grey.200' }}>
+                  <CardContent sx={{ p: 2, '&:last-child': { pb: 2 } }}>
+                    <LocalShippingOutlinedIcon color="primary" sx={{ fontSize: 32, mb: 1 }} />
+                    <Typography variant="subtitle2" fontWeight="700">Fast Shipping</Typography>
+                    <Typography variant="caption" color="text.secondary">Free delivery on bulk orders</Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+
+              <Grid item xs={12} sm={4}>
+                <Card elevation={0} sx={{ bgcolor: 'grey.50', borderRadius: 3, border: '1px solid', borderColor: 'grey.200' }}>
+                  <CardContent sx={{ p: 2, '&:last-child': { pb: 2 } }}>
+                    <ShieldOutlinedIcon color="primary" sx={{ fontSize: 32, mb: 1 }} />
+                    <Typography variant="subtitle2" fontWeight="700">Secure Payments</Typography>
+                    <Typography variant="caption" color="text.secondary">100% Protected transactions</Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+
+              <Grid item xs={12} sm={4}>
+                <Card elevation={0} sx={{ bgcolor: 'grey.50', borderRadius: 3, border: '1px solid', borderColor: 'grey.200' }}>
+                  <CardContent sx={{ p: 2, '&:last-child': { pb: 2 } }}>
+                    <SupportAgentOutlinedIcon color="primary" sx={{ fontSize: 32, mb: 1 }} />
+                    <Typography variant="subtitle2" fontWeight="700">24/7 Support</Typography>
+                    <Typography variant="caption" color="text.secondary">Dedicated help team</Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            </Grid>
+          </Paper>
+        </Grid>
+        <Grid item xs={12} md={5}>
+          <Stack spacing={3}>
+            <Paper elevation={0} sx={{ p: 3.5, borderRadius: 4, border: '1px solid', borderColor: 'divider' }}>
+              <Typography variant="h6" fontWeight="800" gutterBottom sx={{ mb: 2 }}>
+                Contact Information
+              </Typography>
+              <Stack spacing={2.5}>
+                <Stack direction="row" spacing={2} alignItems="center">
+                  <Box sx={{ p: 1, borderRadius: 2, bgcolor: 'primary.50', color: 'primary.main', display: 'flex' }}>
+                    <EmailOutlinedIcon fontSize="small" />
+                  </Box>
+                  <Box>
+                    <Typography variant="caption" color="text.secondary" display="block">Email Address</Typography>
+                    <Typography variant="body2" fontWeight="600">support@kshop.com</Typography>
+                  </Box>
+                </Stack>
+
+                <Stack direction="row" spacing={2} alignItems="center">
+                  <Box sx={{ p: 1, borderRadius: 2, bgcolor: 'primary.50', color: 'primary.main', display: 'flex' }}>
+                    <PhoneOutlinedIcon fontSize="small" />
+                  </Box>
+                  <Box>
+                    <Typography variant="caption" color="text.secondary" display="block">Phone Number</Typography>
+                    <Typography variant="body2" fontWeight="600">+962 7 7718 7129</Typography>
+                  </Box>
+                </Stack>
+
+                <Stack direction="row" spacing={2} alignItems="center">
+                  <Box sx={{ p: 1, borderRadius: 2, bgcolor: 'primary.50', color: 'primary.main', display: 'flex' }}>
+                    <LocationOnOutlinedIcon fontSize="small" />
+                  </Box>
+                  <Box>
+                    <Typography variant="caption" color="text.secondary" display="block">Location</Typography>
+                    <Typography variant="body2" fontWeight="600">Al-Salt, Jordan</Typography>
+                  </Box>
+                </Stack>
+              </Stack>
+            </Paper>
+
+            <Paper elevation={0} sx={{ p: 3.5, borderRadius: 4, border: '1px solid', borderColor: 'divider' }}>
+              <Typography variant="h6" fontWeight="800" gutterBottom sx={{ mb: 2 }}>
+                Business Hours
+              </Typography>
+              <Stack spacing={2}>
+                <Stack direction="row" justifyContent="space-between" alignItems="center">
+                  <Stack direction="row" spacing={1.5} alignItems="center">
+                    <AccessTimeOutlinedIcon color="action" fontSize="small" />
+                    <Typography variant="body2" color="text.secondary">Mon – Fri</Typography>
+                  </Stack>
+                  <Typography variant="body2" fontWeight="700">9:00 AM – 8:00 PM</Typography>
+                </Stack>
+
+                <Divider />
+
+                <Stack direction="row" justifyContent="space-between" alignItems="center">
+                  <Stack direction="row" spacing={1.5} alignItems="center">
+                    <AccessTimeOutlinedIcon color="action" fontSize="small" />
+                    <Typography variant="body2" color="text.secondary">Sat – Sun</Typography>
+                  </Stack>
+                  <Typography variant="body2" fontWeight="700">10:00 AM – 6:00 PM</Typography>
+                </Stack>
+              </Stack>
+            </Paper>
+          </Stack>
+        </Grid>
+      </Grid>
     </Container>
   );
 }

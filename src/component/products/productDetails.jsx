@@ -34,7 +34,6 @@ export default function ProductDetails() {
         }
       }
     );
-    // Trigger alert immediately on click
     setOpenAlert(true);
   };
 
@@ -104,7 +103,6 @@ export default function ProductDetails() {
             </Box>
           </Grid>
 
-          {/* Product Details */}
           <Grid item xs={12} md={6}>
             <Stack spacing={2.5}>
               <Box>
@@ -152,7 +150,6 @@ export default function ProductDetails() {
         </Grid>
       </Paper>
 
-      {/* Alert Notification */}
       <Snackbar
         open={openAlert}
         autoHideDuration={3000}

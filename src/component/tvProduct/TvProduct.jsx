@@ -78,15 +78,6 @@ const TvSection = () => {
                             {t('Smart TVs & Displays')}
                         </Typography>
                     </Box>
-
-                    <Button
-                        component={Link}
-                        to="/products?category=tv"
-                        endIcon={<ArrowForwardIcon />}
-                        sx={{ fontWeight: 600 }}
-                    >
-                        {t('View All TVs')}
-                    </Button>
                 </Box>
 
                 <Grid container spacing={3}>

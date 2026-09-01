@@ -32,9 +32,11 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
+
 export default function Cart() {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  
 
   const { data, isLoading, isError, error } = useCart();
 
@@ -266,18 +268,18 @@ export default function Cart() {
                 </Typography>
 
                 <Stack spacing={2} sx={{ my: 3 }}>
-                  <Stack direction="row" justifyContent="space-between">
+                  <Stack direction="row" justifycontent="space-between">
                     <Typography color="text.secondary">{t("Subtotal")}</Typography>
                     <Typography fontWeight="600">${subtotal.toFixed(2)}</Typography>
                   </Stack>
-                  <Stack direction="row" justifyContent="space-between">
+                  <Stack direction="row" justifycontent="space-between">
                     <Typography color="text.secondary">{t("Shipping")}</Typography>
                     <Typography color="success.main" fontWeight="600">
                       {t("Free")}
                     </Typography>
                   </Stack>
                   <Divider />
-                  <Stack direction="row" justifyContent="space-between" alignItems="center">
+                  <Stack direction="row" justifycontent="space-between" alignitems="center">
                     <Typography variant="subtitle1" fontWeight="700">
                       {t("Total")}
                     </Typography>
