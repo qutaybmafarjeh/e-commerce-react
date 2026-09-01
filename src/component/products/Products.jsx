@@ -96,7 +96,7 @@ const Products = () => {
 
                     {data?.response?.data?.map((product) => (
 
-                        <Grid item xs={12} sm={6} md={4} key={product.id}>
+                        <Grid item="true" xs={12} sm={6} md={4} key={product.id}>
 
                             <Card
 

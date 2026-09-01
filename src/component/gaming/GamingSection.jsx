@@ -57,7 +57,7 @@ const GamingSection = () => {
         <Box component="section" sx={{ py: 8, bgcolor: 'background.paper' }}>
             <Container maxWidth="xl">
                 <Box sx={{ mb: 5, textAlign: 'center' }}>
-                    <Stack direction="row" alignItems="center" justifyContent="center" spacing={1.5} sx={{ mb: 1 }}>
+                    <Stack direction="row" alignitems="center" justifycontent="center" spacing={1.5} sx={{ mb: 1 }}>
                         <Box
                             sx={{
                                 p: 1,
@@ -76,9 +76,9 @@ const GamingSection = () => {
                 </Box>
 
                 {/* Product Grid */}
-                <Grid container spacing={3} justifyContent={{ xs: 'center', md: 'flex-start' }}>
+                <Grid container spacing={3} justifycontent={{ xs: 'center', md: 'flex-start' }}>
                     {gamingProducts.map((product) => (
-                        <Grid item xs={12} sm={6} md={4} lg={3} key={product.id}>
+                        <Grid item="true" xs={12} sm={6} md={4} lg={3} key={product.id}>
                             <Card
                                 elevation={0}
                                 sx={{
@@ -127,8 +127,8 @@ const GamingSection = () => {
                                         height: '100%',
                                         display: 'flex',
                                         flexDirection: 'column',
-                                        alignItems: 'stretch',
-                                        justifyContent: 'space-between',
+                                        alignitems: 'stretch',
+                                        justifycontent: 'space-between',
                                     }}
                                 >
                                     <Box
@@ -137,8 +137,8 @@ const GamingSection = () => {
                                             height: 220,
                                             p: 3,
                                             display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
+                                            alignitems: 'center',
+                                            justifycontent: 'center',
                                             bgcolor: 'grey.50',
                                             borderBottom: '1px solid',
                                             borderColor: 'grey.100',
@@ -177,7 +177,7 @@ const GamingSection = () => {
                                             {product.name}
                                         </Typography>
 
-                                        <Stack direction="row" alignItems="center" spacing={0.5} sx={{ mb: 2 }}>
+                                        <Stack direction="row" alignitems="center" spacing={0.5} sx={{ mb: 2 }}>
                                             <Rating
                                                 value={product.rating}
                                                 precision={0.1}
@@ -190,7 +190,7 @@ const GamingSection = () => {
                                             </Typography>
                                         </Stack>
 
-                                        <Stack direction="row" alignItems="baseline" spacing={1}>
+                                        <Stack direction="row" alignitems="baseline" spacing={1}>
                                             <Typography variant="h6" fontWeight="800" color="primary.main">
                                                 ${product.price}
                                             </Typography>

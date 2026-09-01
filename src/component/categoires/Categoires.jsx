@@ -39,12 +39,12 @@ export default function Categories() {
           fontWeight="700" 
           sx={{ textAlign: 'center', mb: 4 }}
         >
-          {t('Categoires')}
+          {t('Categories')}
         </Typography>
 
         <Grid container spacing={3}>
           {data?.response?.data?.map((category) => (
-            <Grid item xs={12} sm={6} md={4} key={category.id}>
+            <Grid item="true" xs={12} sm={6} md={4} key={category.id}>
               <Card
                 elevation={2}
                 sx={{
@@ -61,13 +61,14 @@ export default function Categories() {
               >
                 <CardActionArea
                   component={Link}
+                  nativeButton={false}
                   sx={{
                     height: '100%',
                     py: 3,
                     px: 2,
                     display: 'flex',
-                    alignItems: 'center',
-                    justify: 'center',
+                    alignitems: 'center',
+                    justifycontent: 'center',
                   }}
                 >
                   <CardContent sx={{ p: 0, '&:last-child': { pb: 0 } }}>
@@ -75,7 +76,7 @@ export default function Categories() {
                       variant="h6" 
                       component="h3" 
                       fontWeight="600" 
-                      sx={{ textAlign: 'center' }}
+                      sx={{ textalign: 'center' }}
                     >
                       {category.name}
                     </Typography>

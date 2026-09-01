@@ -121,7 +121,7 @@ export default function Cart() {
         </Paper>
       ) : (
         <Grid container spacing={4}>
-          <Grid item xs={12} md={8}>
+          <Grid item="true" xs={12} md={8}>
             <TableContainer
               component={Paper}
               elevation={0}
@@ -147,7 +147,7 @@ export default function Cart() {
                   {data.items.map((item) => (
                     <TableRow key={item.id} hover sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
                       <TableCell>
-                        <Stack direction="row" spacing={2} alignItems="center">
+                        <Stack direction="row" spacing={2} alignitems="center">
                           <Avatar
                             variant="rounded"
                             sx={{
@@ -252,7 +252,7 @@ export default function Cart() {
             </Box>
           </Grid>
 
-          <Grid item xs={12} md={4}>
+          <Grid item="true" xs={12} md={4}>
             <Card
               elevation={0}
               sx={{

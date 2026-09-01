@@ -82,7 +82,7 @@ const TvSection = () => {
 
                 <Grid container spacing={3}>
                     {tvProducts.map((tv) => (
-                        <Grid item xs={12} sm={6} md={3} key={tv.id}>
+                        <Grid item="true" xs={12} sm={6} md={3} key={tv.id}>
                             <Card
                                 elevation={2}
                                 sx={{

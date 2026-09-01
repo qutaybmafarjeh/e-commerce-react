@@ -68,7 +68,7 @@ export default function Login() {
         </Typography>
 
         <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
-          Welcome back! Please enter your details to log in.
+          {t('Sign in to your account')}
         </Typography>
 
         {serverErrors?.length > 0 && (
@@ -80,8 +80,6 @@ export default function Login() {
             ))}
           </Stack>
         )}
-
-        {/* Login Form */}
         <Box
           component="form"
           onSubmit={handleSubmit(LoginForm)}
@@ -108,7 +106,7 @@ export default function Login() {
             {...register('password')}
             error={Boolean(errors.password)}
             helperText={errors.password?.message}
-            InputProps={{
+            inputprops={{
               endAdornment: (
                 <InputAdornment position="end">
                   <IconButton
@@ -146,7 +144,7 @@ export default function Login() {
         <Divider sx={{ width: '100%', my: 3 }} />
 
         <Typography variant="body2" color="text.secondary">
-          Don't have an account?{' '}
+          {t('Don\'t have an account?')}{' '}
           <Link component={RouterLink} to="/register" underline="hover" color="primary" fontWeight="600">
             {t('Register')}
           </Link>

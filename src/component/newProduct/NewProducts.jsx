@@ -19,7 +19,7 @@ export default function NewProducts() {
 
       <Grid container spacing={2}>
      
-        <Grid item xs={12} md={5}>
+        <Grid item="true" xs={12} md={5}>
           <Paper
             elevation={2}
             sx={{
@@ -44,10 +44,10 @@ export default function NewProducts() {
           </Paper>
         </Grid>
 
-        <Grid item xs={12} md={7}>
+        <Grid item="true" xs={12} md={7}>
           <Grid container spacing={2}>
             
-            <Grid item xs={6}>
+            <Grid item="true" xs={6}>
               <Paper
                 elevation={2}
                 sx={{
@@ -71,7 +71,7 @@ export default function NewProducts() {
               </Paper>
             </Grid>
 
-            <Grid item xs={6}>
+            <Grid item="true" xs={6}>
               <Paper
                 elevation={2}
                 sx={{
@@ -95,7 +95,7 @@ export default function NewProducts() {
               </Paper>
             </Grid>
 
-            <Grid item xs={12}>
+            <Grid item="true" xs={12}>
               <Paper
                 elevation={2}
                 sx={{

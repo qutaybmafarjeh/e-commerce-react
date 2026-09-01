@@ -7,11 +7,9 @@ const axiosInstance = axios.create({
    
 });
 
- axiosInstance.interceptors.request.use(
-    (config) => {
-        config.headers["Accept-Language"] = i18n.language;
-        return config;
-    }
-);
+axiosInstance.interceptors.request.use((config) => {
+  config.headers.set("Accept-Language", i18n.language);
+  return config;
+});
 
 export default axiosInstance;

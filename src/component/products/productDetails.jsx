@@ -37,7 +37,7 @@ export default function ProductDetails() {
     setOpenAlert(true);
   };
 
-  const handleCloseAlert = () => {
+  const handleCloseAlert = (event, reason) => {
     if (reason === 'clickaway') {
       return;
     }
@@ -70,9 +70,8 @@ export default function ProductDetails() {
   return (
     <Container maxWidth="lg" sx={{ py: 6 }}>
       <Paper elevation={2} sx={{ borderRadius: 4, overflow: 'hidden', p: { xs: 2, md: 4 } }}>
-        <Grid container spacing={4} alignItems="center">
-          {/* Product Image */}
-          <Grid item xs={12} md={6}>
+        <Grid container spacing={4} alignitems="center">
+          <Grid item="true" xs={12} md={6}>
             <Box
               sx={{
                 width: '100%',
@@ -103,7 +102,7 @@ export default function ProductDetails() {
             </Box>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid item="true" xs={12} md={6}>
             <Stack spacing={2.5}>
               <Box>
                 <Chip label="In Stock" color="success" size="small" variant="outlined" sx={{ mb: 1.5 }} />

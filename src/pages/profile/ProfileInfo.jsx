@@ -39,9 +39,9 @@ export default function ProfileInfo() {
           overflow: 'hidden'
         }}
       >
-        <Grid container spacing={3} alignItems="center">
-          <Grid item xs={12} md={8}>
-            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={3} alignItems="center">
+        <Grid container spacing={3} alignitems="center">
+          <Grid item="true" xs={12} md={8}>
+            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={3} alignitems="center">
               <Avatar
                 sx={{
                   width: 90,
@@ -82,7 +82,7 @@ export default function ProfileInfo() {
       </Paper>
 
       <Grid container spacing={4}>
-        <Grid item xs={12} md={7}>
+        <Grid item="true" xs={12} md={7}>
           <Paper
             elevation={0}
             sx={{
@@ -96,7 +96,7 @@ export default function ProfileInfo() {
             <Typography variant="h6" fontWeight="800" gutterBottom>
               About Our Store
             </Typography>
-            <Typography variant="body1" color="text.secondary" paragraph sx={{ lineHeight: 1.8, mb: 4 }}>
+            <Typography variant="body1" color="text.secondary" paragraph="true" sx={{ lineHeight: 1.8, mb: 4 }}>
               Welcome to KShop! We provide high-quality products curated for your daily lifestyle needs.
               From modern electronics to essential home items, our mission is focused on delivering top-tier 
               products paired with rapid shipping and dependable customer service.
@@ -108,7 +108,7 @@ export default function ProfileInfo() {
               Why Shop With Us?
             </Typography>
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={4}>
+              <Grid item="true" xs={12} sm={4}>
                 <Card elevation={0} sx={{ bgcolor: 'grey.50', borderRadius: 3, border: '1px solid', borderColor: 'grey.200' }}>
                   <CardContent sx={{ p: 2, '&:last-child': { pb: 2 } }}>
                     <LocalShippingOutlinedIcon color="primary" sx={{ fontSize: 32, mb: 1 }} />
@@ -118,7 +118,7 @@ export default function ProfileInfo() {
                 </Card>
               </Grid>
 
-              <Grid item xs={12} sm={4}>
+              <Grid item="true" xs={12} sm={4}>
                 <Card elevation={0} sx={{ bgcolor: 'grey.50', borderRadius: 3, border: '1px solid', borderColor: 'grey.200' }}>
                   <CardContent sx={{ p: 2, '&:last-child': { pb: 2 } }}>
                     <ShieldOutlinedIcon color="primary" sx={{ fontSize: 32, mb: 1 }} />
@@ -128,7 +128,7 @@ export default function ProfileInfo() {
                 </Card>
               </Grid>
 
-              <Grid item xs={12} sm={4}>
+              <Grid item="true" xs={12} sm={4}>
                 <Card elevation={0} sx={{ bgcolor: 'grey.50', borderRadius: 3, border: '1px solid', borderColor: 'grey.200' }}>
                   <CardContent sx={{ p: 2, '&:last-child': { pb: 2 } }}>
                     <SupportAgentOutlinedIcon color="primary" sx={{ fontSize: 32, mb: 1 }} />
@@ -140,14 +140,14 @@ export default function ProfileInfo() {
             </Grid>
           </Paper>
         </Grid>
-        <Grid item xs={12} md={5}>
+        <Grid item="true" xs={12} md={5}>
           <Stack spacing={3}>
             <Paper elevation={0} sx={{ p: 3.5, borderRadius: 4, border: '1px solid', borderColor: 'divider' }}>
               <Typography variant="h6" fontWeight="800" gutterBottom sx={{ mb: 2 }}>
                 Contact Information
               </Typography>
               <Stack spacing={2.5}>
-                <Stack direction="row" spacing={2} alignItems="center">
+                <Stack direction="row" spacing={2} alignitems="center">
                   <Box sx={{ p: 1, borderRadius: 2, bgcolor: 'primary.50', color: 'primary.main', display: 'flex' }}>
                     <EmailOutlinedIcon fontSize="small" />
                   </Box>
@@ -157,7 +157,7 @@ export default function ProfileInfo() {
                   </Box>
                 </Stack>
 
-                <Stack direction="row" spacing={2} alignItems="center">
+                <Stack direction="row" spacing={2} alignitems="center">
                   <Box sx={{ p: 1, borderRadius: 2, bgcolor: 'primary.50', color: 'primary.main', display: 'flex' }}>
                     <PhoneOutlinedIcon fontSize="small" />
                   </Box>
@@ -167,7 +167,7 @@ export default function ProfileInfo() {
                   </Box>
                 </Stack>
 
-                <Stack direction="row" spacing={2} alignItems="center">
+                <Stack direction="row" spacing={2} alignitems="center">
                   <Box sx={{ p: 1, borderRadius: 2, bgcolor: 'primary.50', color: 'primary.main', display: 'flex' }}>
                     <LocationOnOutlinedIcon fontSize="small" />
                   </Box>
@@ -184,8 +184,8 @@ export default function ProfileInfo() {
                 Business Hours
               </Typography>
               <Stack spacing={2}>
-                <Stack direction="row" justifyContent="space-between" alignItems="center">
-                  <Stack direction="row" spacing={1.5} alignItems="center">
+                <Stack direction="row" justifycontent="space-between" alignitems="center">
+                  <Stack direction="row" spacing={1.5} alignitems="center">
                     <AccessTimeOutlinedIcon color="action" fontSize="small" />
                     <Typography variant="body2" color="text.secondary">Mon – Fri</Typography>
                   </Stack>
@@ -194,8 +194,8 @@ export default function ProfileInfo() {
 
                 <Divider />
 
-                <Stack direction="row" justifyContent="space-between" alignItems="center">
-                  <Stack direction="row" spacing={1.5} alignItems="center">
+                <Stack direction="row" justifycontent="space-between" alignitems="center">
+                  <Stack direction="row" spacing={1.5} alignitems="center">
                     <AccessTimeOutlinedIcon color="action" fontSize="small" />
                     <Typography variant="body2" color="text.secondary">Sat – Sun</Typography>
                   </Stack>

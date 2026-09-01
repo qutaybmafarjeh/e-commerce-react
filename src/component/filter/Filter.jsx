@@ -62,7 +62,7 @@ const Products = () => {
                 </Typography>
 
                 <Grid container spacing={4}>
-                    <Grid item xs={12} md={3}>
+                    <Grid item="true" xs={12} md={3}>
                         <Paper elevation={1} sx={{ p: 3, borderRadius: 3 }}>
                             <Typography variant="h6" fontWeight="700" sx={{ mb: 2 }}>
                                 {t('Filters')}
@@ -118,11 +118,11 @@ const Products = () => {
                             </Box>
                         </Paper>
                     </Grid>
-                    <Grid item xs={12} md={9}>
+                    <Grid item="true" xs={12} md={9}>
                         <Grid container spacing={3}>
                             {filteredProducts.length > 0 ? (
                                 filteredProducts.map((product) => (
-                                    <Grid item xs={12} sm={6} md={4} key={product.id}>
+                                    <Grid item="true" xs={12} sm={6} md={4} key={product.id}>
                                         <Card
                                             elevation={2}
                                             sx={{
@@ -213,7 +213,7 @@ const Products = () => {
                                     </Grid>
                                 ))
                             ) : (
-                                <Grid item xs={12}>
+                                <Grid item="true" xs={12}>
                                     <Paper sx={{ p: 4, textAlign: 'center', bgcolor: 'grey.50', borderRadius: 3 }}>
                                         <Typography variant="h6" color="text.secondary">
                                             {t('No products found matching your filters.')}

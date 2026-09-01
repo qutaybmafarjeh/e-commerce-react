@@ -18,7 +18,7 @@ export default function Footer() {
       <Container maxWidth="lg">
         <Grid container spacing={4} justifycontent="space-between">
           
-          <Grid item xs={12} md={4}>
+          <Grid item="true" xs={12} md={4}>
             <Box sx={{ mb: 2 }}>
               <img 
                 src="./src/assets/images/image/KShop.png" 
@@ -32,7 +32,7 @@ export default function Footer() {
             </Typography>
           </Grid>
 
-          <Grid item xs={6} sm={4} md={2}>
+          <Grid item="true" xs={6} sm={4} md={2}>
             <Typography 
               variant="subtitle1" 
               color="white" 
@@ -57,7 +57,7 @@ export default function Footer() {
             </Stack>
           </Grid>
 
-          <Grid item xs={6} sm={4} md={2}>
+          <Grid item="true" xs={6} sm={4} md={2}>
             <Typography 
               variant="subtitle1" 
               color="white" 
@@ -79,7 +79,7 @@ export default function Footer() {
             </Stack>
           </Grid>
 
-          <Grid item xs={12} sm={4} md={3}>
+          <Grid item="true" xs={12} sm={4} md={3}>
             <Typography 
               variant="subtitle1" 
               color="white" 

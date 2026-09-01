@@ -65,7 +65,7 @@ export default function Register() {
         </Typography>
 
         <Typography variant="body2" color="text.secondary" sx={{ mb: 3, textAlign: 'center' }}>
-          Create an account to get started with KShop.
+          {t('Create an account to get started with KShop')}
         </Typography>
 
         {serverErrors?.length > 0 && (
@@ -85,7 +85,7 @@ export default function Register() {
           sx={{ width: '100%' }}
         >
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
+            <Grid item="true" xs={12} sm={6}>
               <TextField
                 fullWidth
                 id="userName"
@@ -97,7 +97,7 @@ export default function Register() {
               />
             </Grid>
 
-            <Grid item xs={12} sm={6}>
+            <Grid item="true" xs={12} sm={6}>
               <TextField
                 fullWidth
                 id="fullName"
@@ -109,7 +109,7 @@ export default function Register() {
               />
             </Grid>
 
-            <Grid item xs={12}>
+            <Grid item="true" xs={12}>
               <TextField
                 fullWidth
                 id="email"
@@ -122,7 +122,7 @@ export default function Register() {
               />
             </Grid>
 
-            <Grid item xs={12}>
+            <Grid item="true" xs={12}>
               <TextField
                 fullWidth
                 id="phoneNumber"
@@ -134,7 +134,7 @@ export default function Register() {
               />
             </Grid>
 
-            <Grid item xs={12}>
+            <Grid item="true" xs={12}>
               <TextField
                 fullWidth
                 id="password"
@@ -144,7 +144,7 @@ export default function Register() {
                 {...register('password')}
                 error={Boolean(errors.password)}
                 helperText={errors.password?.message}
-                InputProps={{
+                inputprops={{
                   endAdornment: (
                     <InputAdornment position="end">
                       <IconButton
@@ -186,7 +186,7 @@ export default function Register() {
         <Divider sx={{ width: '100%', my: 3 }} />
 
         <Typography variant="body2" color="text.secondary">
-          Already have an account?{' '}
+          {t('Already have an account?')}{' '}
           <Link component={RouterLink} to="/login" underline="hover" color="primary" fontWeight="600">
             {t('Login')}
           </Link>
