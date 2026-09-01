@@ -74,8 +74,6 @@ const GamingSection = () => {
                         </Typography>
                     </Stack>
                 </Box>
-
-                {/* Product Grid */}
                 <Grid container spacing={3} justifycontent={{ xs: 'center', md: 'flex-start' }}>
                     {gamingProducts.map((product) => (
                         <Grid item="true" xs={12} sm={6} md={4} lg={3} key={product.id}>
